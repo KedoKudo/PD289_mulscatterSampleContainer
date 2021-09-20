@@ -2,7 +2,7 @@
 
 # ----- Project Macro ----- #
 UnitTestCategory := AllTests
-UnitTestName := MyAlgorithmTest
+UnitTestName := MultipleScatteringCorrectionTest
 TestScript := test.py
 
 # ------------------------------------------------------ #
