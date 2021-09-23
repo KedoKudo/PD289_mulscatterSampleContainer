@@ -21,19 +21,19 @@ import numpy as np
 def make_sample_workspace():
     # Create a fake workspace with TOF data
     sample_ws = CreateSampleWorkspace(Function='Powder Diffraction',
-                                      NumBanks=4,
+                                      NumBanks=2,
                                       BankPixelWidth=1,
                                       XUnit='TOF',
                                       XMin=1000,
-                                      XMax=10000)
+                                      XMax=1500,)
     # fake instrument
     EditInstrumentGeometry(sample_ws,
                            PrimaryFlightPath=5.0,
-                           SpectrumIDs=[1, 2, 3, 4],
-                           L2=[2.0, 2.0, 2.0, 2.0],
-                           Polar=[10.0, 90.0, 170.0, 90.0],
-                           Azimuthal=[0.0, 0.0, 0.0, 45.0],
-                           DetectorIDs=[1, 2, 3, 4],
+                           SpectrumIDs=[1, 2],
+                           L2=[2.0, 2.0],
+                           Polar=[10.0, 90.0],
+                           Azimuthal=[0.0, 45.0],
+                           DetectorIDs=[1, 2],
                            InstrumentName="Instrument")
     return sample_ws
 

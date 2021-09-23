@@ -17,7 +17,7 @@ MANTIDDIR := $(mkfile_top)/mantid
 BUILDDIR  := $(mkfile_top)/build
 INTALLDIR := $(mkfile_top)/opt/mantid
 HOSTNAME  := $(shell hostname)
-BASEOPTS  := -GNinja -DDOCS_PLOTDIRECTIVE=ON -DCMAKE_INSTALL_PREFIX=$(INTALLDIR) -DCMAKE_BUILD_TYPE=RelWithDebInfo
+BASEOPTS  := -GNinja -DDOCS_PLOTDIRECTIVE=ON -DCMAKE_INSTALL_PREFIX=$(INTALLDIR) -DCMAKE_BUILD_TYPE=RelWithDebInfo -DTESTING_TIMEOUT=999999
 
 # ----- GDB -----
 TestExecutable := $(BUILDDIR)/bin/AlgorithmsTest
@@ -45,7 +45,7 @@ else
 endif
 
 # ----- UNIT TEST -----
-UNTCMDS := ctest --output-on-failure -V -R $(UnitTestName)
+UNTCMDS := ctest --timeout 1200 --output-on-failure -V -R $(UnitTestName)
 
 # ----- Targets -----
 .PHONY: test qtest build unittest docs init list clean archive
