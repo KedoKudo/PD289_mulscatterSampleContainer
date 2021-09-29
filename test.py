@@ -66,5 +66,5 @@ ConvertUnits(InputWorkspace=ws,
 rst = MultipleScatteringCorrection(
     InputWorkspace = ws,
     Method="SampleAndContainer",
-    ElementSize=0.5,  # mm
+    ElementSize=0.1,  # mm
 )
